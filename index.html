@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ciallo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+        #message {
+            position: absolute;
+            top: center;
+            left: center;
+            font-size: 50px;
+            color: black;
+        }
+        #footText {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 10px;
+            color: gray;
+        }
+    </style>
+    <script>
+        function randomRedirect() {
+            const urls = [
+                "https://www.youtube.com/watch?v=IazpFBFRvl8",
+                "https://www.youtube.com/watch?v=W7ARsYs-Gq0",
+                "https://www.youtube.com/watch?v=0EJ7HvJYe1M",
+                
+            ];
+            //随机显示url
+            const randomIndex = Math.floor(Math.random() * urls.length);
+            const randomUrl = urls[randomIndex];
+            
+            // 显示ciallo
+            document.getElementById('message').innerText = 'Ciallo～(∠・ω< )⌒★';
+            // 2.5s后跳转
+            setTimeout(() => {
+                window.location.href = randomUrl;
+            }, 2500);
+        }
+    </script>
+</head>
+<body onload="randomRedirect()">
+    <div id="message"></div>
+    <div id="footText">柚子厨蒸鹅心</div>
+</body>
+</html>
